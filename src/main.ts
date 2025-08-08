@@ -24,5 +24,5 @@ const processor = new EvmBatchProcessor()
   .addLog({})
 
 processor.run(new TypeormDatabase({ supportHotBlocks: true }), async (ctx) => {
-  console.log(`Got blocks ${ctx.blocks[0].header.height}-${ctx.blocks[ctx.blocks.length-1].header.height}`)
+  console.log(`Got blocks ${ctx.blocks[0]?.header.height}-${ctx.blocks[ctx.blocks.length-1]?.header.height}`)
 });
