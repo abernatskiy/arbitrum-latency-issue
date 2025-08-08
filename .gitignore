@@ -1,0 +1,14 @@
+/node_modules
+/lib
+/builds
+/.yarn
+
+/**Versions.json
+
+# IDE files
+/.idea
+/.vscode
+
+.*key
+.env
+debug.log

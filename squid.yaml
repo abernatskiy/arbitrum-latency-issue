@@ -1,0 +1,32 @@
+manifestVersion: subsquid.io/v0.1
+name: gmx-synthetics-arbitrum
+description: "GMX Squid on Arbitrum"
+
+scale:
+  dedicated: true
+  addons:
+    postgres:
+      storage: 50G
+      profile: large
+  processor:
+    profile: medium
+  api:
+    profile: medium
+
+build:
+  node_version: 20 # default
+  package_manager: yarn
+
+deploy:
+  addons:
+    postgres:
+    rpc:
+      - arbitrum-one.http
+  processor:
+    cmd:
+      - sqd
+      - process:prod
+  api:
+    cmd:
+      - sqd
+      - serve:prod
